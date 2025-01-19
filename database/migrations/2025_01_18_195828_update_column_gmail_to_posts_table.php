@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->foreignId('category_id')->constrained('categories');
+        Schema::table('posts', function (Blueprint $table) {
+            //
+            $table->renameColumn('gmail','email');
         });
     }
 
@@ -25,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::table('posts', function (Blueprint $table) {
+            //
+            $table->renameColumn('email','gmail');
+        });
     }
 };
