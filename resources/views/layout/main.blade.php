@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content1')
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -35,6 +37,10 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('about.index')}}">About</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('post.index')}}">Admin</a>
+          </li>
+
         </ul>
       </div>
     </div>
@@ -44,3 +50,4 @@
     @yield('content')
 </body>
 </html>
+@endsection
